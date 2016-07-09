@@ -20,15 +20,19 @@ class TidelinesController < ApplicationController
 
 							extremes = worldtides.parsed_response['extremes']
 							if surfline.code == 200
+								arr_of_surfilne = []
+								surfline.each do |surf|
+									arr_of_surfilne << {
+										id: surf['id'],
+										name: surf['name'],
+										lat: surf['lat'],
+										lon: surf['lot'],
+										wave_height: "#{surf['Surf']['surf_min'][0][0]} - #{surf['Surf']['surf_max'][0][0]}",
+										swell_direction: surf['Surf']['swell_direction1'][0][0]
+									}
+								end
 								render json: [
-									spots:{
-											id: surfline.first['id'],
-											name: surfline.first['name'],
-											lat: surfline.first['lat'],
-											lon: surfline.first['lot'],
-											wave_height: "#{surfline.first['Surf']['surf_min'][0][0]} - #{surfline.first['Surf']['surf_max'][0][0]}",
-											swell_direction: surfline.first['Surf']['swell_direction1'][0][0]
-									},
+									spots: arr_of_surfilne,
 									conditions:
 									{
 										tide:{
