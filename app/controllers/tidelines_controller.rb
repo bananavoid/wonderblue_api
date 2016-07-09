@@ -22,12 +22,12 @@ class TidelinesController < ApplicationController
 							if surfline.code == 200
 								render json: [
 									spots:{
-											id: surfline['id'],
-											name: surfline['name'],
-											lat: surfline['lat'],
-											lon: surfline['lot'],
-											wave_height: "#{surfline['Surf']['surf_min'][0][0]} - #{surfline['Surf']['surf_max'][0][0]}",
-											swell_direction: surfline['Surf']['swell_direction1'][0][0]
+											id: surfline.first['id'],
+											name: surfline.first['name'],
+											lat: surfline.first['lat'],
+											lon: surfline.first['lot'],
+											wave_height: "#{surfline.first['Surf']['surf_min'][0][0]} - #{surfline.first['Surf']['surf_max'][0][0]}",
+											swell_direction: surfline.first['Surf']['swell_direction1'][0][0]
 									},
 									conditions:
 									{
