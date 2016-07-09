@@ -26,7 +26,7 @@ class TidelinesController < ApplicationController
 										id: surf['id'],
 										name: surf['name'],
 										lat: surf['lat'],
-										lon: surf['lot'],
+										lon: surf['lon'],
 										wave_height: "#{surf['Surf']['surf_min'][0][0]} - #{surf['Surf']['surf_max'][0][0]}",
 										swell_direction: surf['Surf']['swell_direction1'][0][0]
 									}
