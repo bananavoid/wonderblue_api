@@ -36,8 +36,8 @@ class TidelinesController < ApplicationController
 									conditions:
 									{
 										tide:{
-											height:worldtides.parsed_response["heights"].last["height"],
-											desc: "#{extremes.last['type']} - #{extremes[extremes.length - 1]['type']}"
+											height:worldtides.parsed_response["heights"].last["height"], // CALCULATED WRONG
+											desc: "#{extremes.last['type']} - #{extremes[extremes.length - 1]['type']}" // CALCULATED WRONG
 										},
 										wind:{
 											speed: forecast.parsed_response['currently']['windSpeed'],
