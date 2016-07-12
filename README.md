@@ -1,6 +1,7 @@
 # SIMPLE RAILS API TASK
 
 * call surfline API:
+
 http://api.surfline.com/v1/forecasts/2169?resources=surf,analysis&days=7&getAllSpots=true&interpolate=false&showOptimal=true
 
 * call worltides API:
